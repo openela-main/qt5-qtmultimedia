@@ -1,0 +1,10 @@
+diff --git a/tests/auto/runautotests.py b/tests/auto/runautotests.py
+index ba277e9..162dd1d 100755
+--- a/tests/auto/runautotests.py
++++ b/tests/auto/runautotests.py
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#! /usr/bin/python3
+ #############################################################################
+ ##
+ ## Copyright (C) 2016 The Qt Company Ltd.

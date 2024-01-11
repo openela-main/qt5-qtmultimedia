@@ -11,7 +11,7 @@
 
 Summary: Qt5 - Multimedia support
 Name:    qt5-%{qt_module}
-Version: 5.15.3
+Version: 5.15.9
 Release: 1%{?dist}
 
 # See LGPL_EXCEPTIONS.txt, LICENSE.GPL3, respectively, for exception details
@@ -19,8 +19,9 @@ License: LGPLv2 with exceptions or GPLv3 with exceptions
 Url:     http://www.qt.io
 %global majmin %(echo %{version} | cut -d. -f1-2)
 Source0: https://download.qt.io/official_releases/qt/%{majmin}/%{version}/submodules/%{qt_module}-everywhere-opensource-src-%{version}.tar.xz
+
 Patch0:  qtmultimedia-python-shebang.patch
-Patch1: %{name}-gcc11.patch
+Patch1:  %{name}-gcc11.patch
 
 # filter plugin/qml provides
 %global __provides_exclude_from ^(%{_qt5_archdatadir}/qml/.*\\.so|%{_qt5_plugindir}/.*\\.so)$
@@ -173,6 +174,10 @@ popd
 %endif
 
 %changelog
+* Tue Apr 18 2023 Jan Grulich <jgrulich@redhat.com> - 5.15.9-1
+- 5.15.9
+  Resolves: bz#2175736
+
 * Mon Mar 28 2022 Jan Grulich <jgrulich@redhat.com> - 5.15.3-1
 - 5.15.3
   Resolves: bz#2061361
